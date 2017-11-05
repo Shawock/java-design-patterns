@@ -32,24 +32,13 @@ public final class StudentDataMapperImpl implements StudentDataMapper {
 
 	@Override
 	public Optional<Student> find(int studentId) {
-
-    /* Compare with existing students */
-		for (final Student student : this.getStudents()) {
-
-      /* Check if student is found */
-			if (student.getStudentId() == studentId) {
-
-				return Optional.of(student);
-			}
-		}
-
-    /* Return empty value */
-		return Optional.empty();
+		return this.getStudents().stream()
+				.filter(student -> student.getStudentId() == studentId)
+				.findFirst();
 	}
 
 	@Override
 	public void update(Student studentToBeUpdated) throws DataMapperException {
-
 
     /* Check with existing students */
 		if (this.getStudents().contains(studentToBeUpdated)) {

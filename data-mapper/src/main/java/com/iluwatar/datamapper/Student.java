@@ -41,8 +41,6 @@ public final class Student implements Serializable {
 	 * @param grade     as respective grade of student
 	 */
 	public Student(final int studentId, final String name, final char grade) {
-		super();
-
 		this.studentId = studentId;
 		this.name = name;
 		this.grade = grade;
@@ -88,32 +86,6 @@ public final class Student implements Serializable {
 	 */
 	public void setGrade(final char grade) {
 		this.grade = grade;
-	}
-
-	/**
-	 *
-	 */
-	@Override
-	public boolean equals(final Object inputObject) {
-
-		boolean isEqual = false;
-
-    /* Check if both objects are same */
-		if (this == inputObject) {
-
-			isEqual = true;
-		} else if (inputObject != null && getClass() == inputObject.getClass()) {
-
-			final Student inputStudent = (Student) inputObject;
-
-      /* If student id matched */
-			if (this.getStudentId() == inputStudent.getStudentId()) {
-
-				isEqual = true;
-			}
-		}
-
-		return isEqual;
 	}
 
 	/**

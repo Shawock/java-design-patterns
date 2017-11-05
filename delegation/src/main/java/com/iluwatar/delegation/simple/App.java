@@ -55,6 +55,15 @@ public class App {
 		hpPrinterController.print(MESSAGE_TO_PRINT);
 		canonPrinterController.print(MESSAGE_TO_PRINT);
 		epsonPrinterController.print(MESSAGE_TO_PRINT);
+
+		// 那他妈现在的跟上面的有什么区别
+		Printer hpPrinter = new HpPrinter();
+		Printer canonPrinter = new CanonPrinter();
+		Printer epsonPrinter = new EpsonPrinter();
+
+		hpPrinter.print("艹");
+		canonPrinter.print("你");
+		epsonPrinter.print("麻");
 	}
 
 }
